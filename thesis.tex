@@ -2,7 +2,7 @@
 \WarningFilter{latex}{You have requested document class}
 \WarningFilter{latex}{You have requested package}
 
-\documentclass[UKenglish, twoside]{ifimaster}  %% ... or USenglish or norsk or nynorsk
+\documentclass[UKenglish, oneside]{ifimaster}  %% ... or USenglish or norsk or nynorsk
 \raggedbottom
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}           %% ... or latin1 or applemac
@@ -11,10 +11,24 @@
 \usepackage{hyperref}
 \urlstyle{sf}
 \usepackage{textcomp,csquotes,duoforside/duomasterforside,varioref,graphicx}
+\renewcommand{\mkbegdispquote}[2]{\itshape}
+
 \usepackage[acronym, toc]{glossaries}
 \usepackage{enumitem}
 
 \renewcommand{\baselinestretch}{1.5}
+%\usepackage[utf8]{inputenc}
+ 
+\usepackage{epigraph, varwidth}
+\renewcommand{\epigraphrule}{0pt}
+\setlength{\epigraphwidth}{1\textwidth}
+%\renewcommand{\textflush}{flushepinormal}
+%\setlength{\epigraphrule}{0pt}
+%\setlength{\epigraphwidth}{0.8\textwidth}
+%\renewcommand{\textflush}{flushright}
+\renewcommand{\sourceflush}{flushright}
+\renewcommand{\epigraphsize}{\large}
+%\renewcommand{\episourcesize}{\large}
 
 %\usepackage[backend=biber,style=apa, citestyle=authoryear]{biblatex}
 \usepackage[british]{babel}
@@ -65,11 +79,12 @@
 
 %\part{Introduction}
 \input{chapters/01-introduction}
-\input{chapters/02-theory}
+\input{chapters/02-case}
 
 %\part{The project}
-\input{chapters/03-methods}
-\input{chapters/04-case}
+\input{chapters/03-theory}
+\input{chapters/04-methods}
+
 
 %\part{Results and discussion}
 \input{chapters/05-results}
